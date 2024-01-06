@@ -1,9 +1,14 @@
 name: Deploy to S3
 
-on: workflow_dispatch
+on:
+  pull_request:
+    branches: 
+      - master
+    types: [closed]
 
 jobs:
   deploy:
+    if: ${{ github.event.pull_request.merged }}
     permissions:
       id-token: write
       contents: write
