@@ -20,7 +20,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v4
       with:
         role-to-assume: arn:aws:iam::087229364167:role/PortfolioRole
-        aws-region: ap-south-1
+        aws-region: ${{ secrets.AWS_REGION }}
     - name: Aws version
       run: aws --version
     - name: Deploy
