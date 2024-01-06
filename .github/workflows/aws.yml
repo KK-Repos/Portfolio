@@ -1,9 +1,10 @@
-name: Deploy to S3
+name: Deploy to S3 for Static Host
 
 on: workflow_dispatch
 
 jobs:
   deploy:
+  
     permissions:
       id-token: write
       contents: write
@@ -13,13 +14,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
         role-to-assume: arn:aws:iam::087229364167:role/PortfolioRole
         aws-region: ${{ secrets.AWS_REGION }}
-    - name: Aws version
-      run: aws --version
     - name: Deploy
       run: aws s3 sync . s3://${{ secrets.S3_BUCKET }}/
