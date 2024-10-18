@@ -1,6 +1,6 @@
 ## **Welcome to My Portfolio**
 
-This repository showcases my work as a SDET. It includes of my skills, and experience.
+This repository showcases my work as a Devops Enginner. It includes of my skills, and experience.
 
 ## Live Demo:
 
